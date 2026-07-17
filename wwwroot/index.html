@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World · .NET 10</title>
+  <style>
+    :root {
+      --bg-1: #6a11cb;
+      --bg-2: #2575fc;
+      --card: rgba(255, 255, 255, 0.12);
+      --card-border: rgba(255, 255, 255, 0.25);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.8);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+      background-size: 200% 200%;
+      animation: drift 16s ease infinite;
+      padding: 24px;
+    }
+
+    @keyframes drift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
+      text-align: center;
+      padding: 48px 40px;
+      border-radius: 24px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .wave {
+      font-size: 64px;
+      line-height: 1;
+      display: inline-block;
+      transform-origin: 70% 70%;
+      animation: wave 2.4s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+      0%, 60%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+    }
+
+    h1 {
+      margin: 20px 0 8px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p.subtitle {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid var(--card-border);
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a { color: #fff; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="wave" role="img" aria-label="waving hand">👋</span>
+    <h1>Hello, World!</h1>
+    <p class="subtitle">Running on ASP.NET Core &amp; .NET 10, ready for Azure Web Apps.</p>
+    <div class="badges">
+      <span class="badge">⚡ .NET 10</span>
+      <span class="badge">🌐 ASP.NET Core</span>
+      <span class="badge">☁️ Azure Web Apps</span>
+    </div>
+    <footer>
+      Health check: <a href="/healthz">/healthz</a>
+    </footer>
+  </main>
+</body>
+</html>

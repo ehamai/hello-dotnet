@@ -7,8 +7,11 @@ A minimal ASP.NET Core web app targeting **.NET 10**, ready to deploy to
 
 | Method | Path       | Response                                        |
 | ------ | ---------- | ----------------------------------------------- |
-| GET    | `/`        | `Hello World from .NET 10 on Azure Web Apps!`   |
+| GET    | `/`        | A styled HTML "Hello, World!" landing page      |
 | GET    | `/healthz` | `{ "status": "healthy" }`                       |
+
+The landing page is a static file served from `wwwroot/index.html` (gradient
+background, animated wave, and tech badges).
 
 ## Run locally
 

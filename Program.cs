@@ -1,7 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World from .NET 10 on Azure Web Apps!");
+// Serve wwwroot/index.html at "/" and other static assets.
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.MapGet("/healthz", () => Results.Ok(new { status = "healthy" }));
 
