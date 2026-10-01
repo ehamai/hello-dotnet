@@ -13,6 +13,11 @@ A minimal ASP.NET Core web app targeting **.NET 10**, ready to deploy to
 The landing page is a static file served from `wwwroot/index.html` (gradient
 background, animated wave, and tech badges).
 
+Each request to `/` or `/index.html` emits a test application log at the
+`Trace`, `Debug`, `Information`, `Warning`, `Error`, and `Critical` levels. The
+dedicated `HelloWorld.PageLoad` category is configured at `Trace` so all six
+entries are visible without increasing the verbosity of framework logs.
+
 ## Run locally
 
 Requires the [.NET 10 SDK](https://dotnet.microsoft.com/download).
