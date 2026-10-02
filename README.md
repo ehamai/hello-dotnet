@@ -16,7 +16,9 @@ background, animated wave, and tech badges).
 Each request to `/` or `/index.html` emits a test application log at the
 `Trace`, `Debug`, `Information`, `Warning`, `Error`, and `Critical` levels. The
 dedicated `HelloWorld.PageLoad` category is configured at `Trace` so all six
-entries are visible without increasing the verbosity of framework logs.
+entries are visible without increasing the verbosity of framework logs. The
+Azure App Service diagnostics provider writes these entries when application
+logging is enabled in the web app's **App Service logs** settings.
 
 ## Run locally
 
