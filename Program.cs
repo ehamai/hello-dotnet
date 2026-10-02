@@ -4,9 +4,12 @@
  *
  * Behavior:
  * - Emits one test log at every supported verbosity level for each landing-page request
+ * - Uses the Azure App Service diagnostics provider when hosted in Azure
  * - Serves the static landing page and exposes the /healthz endpoint
  */
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.AddAzureWebAppDiagnostics();
+
 var app = builder.Build();
 var pageLoadLogger = app.Services
     .GetRequiredService<ILoggerFactory>()
